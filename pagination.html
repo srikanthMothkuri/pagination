@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="jquery.bootpag.min.js"></script>
+<body>
+<nav>
+ <ul class="pagination">
+   <li class="prev">
+     <a href="#" aria-label="Previous">
+       <span aria-hidden="true">&laquo;</span>
+     </a>
+   </li>
+   <li><a href="#id1">1</a>
+   </li>
+   <li><a href="#id2">2</a>
+   </li>
+   <li><a href="#id3">3</a>
+   </li>
+   <li><a href="#id4">4</a>
+   </li>
+   <li><a href="#">5</a>
+   </li>
+   <li class="next">
+     <a href="#" aria-label="Next">
+       <span aria-hidden="true">&raquo;</span>
+     </a>
+   </li>
+ </ul>
+ <br/>
+ <div class="pagination">
+ <div id="id1">
+ <p>hii id1</p>
+ </div>
+  <div id="id2" style="display:none;">
+ <p>hii id2</p>
+ </div>
+   <div id="id3" style="display:none;">
+ <p>hii id3</p>
+ </div>
+   <div id="id4" style="display:none;">
+ <p>hii id4</p>
+ </div>
+ </div>
+</nav>
+</body>
+<script>
+$(document).ready(function() {
+ var pageItem = $(".pagination li").not(".prev,.next");
+ var prev = $(".pagination li.prev");
+ var next = $(".pagination li.next");
+
+ pageItem.click(function() {
+   pageItem.removeClass("active");
+   $(this).not(".prev,.next").addClass("active");
+ });
+
+ next.click(function() {
+   $('li.active').removeClass('active').next().addClass('active');
+ });
+
+ prev.click(function() {
+   $('li.active').removeClass('active').prev().addClass('active');
+ });
+
+
+});
+//code for pagination not for prev and next button
+
+</script>
+</body>
+</html>
+<!--
+$(document).ready(function(){
+     var $pageItem = $(".pagination li")
+
+     $pageItem.click(function()
+       {
+       $pageItem.removeClass("active");
+       $(this).addClass("active");
+     });
+   });
+   -->
